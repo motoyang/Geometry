@@ -9,6 +9,7 @@ class Geometry;
 
 class Geometry : public QDialog
 {
+    // test
     Q_OBJECT
 
 public:
