@@ -15,6 +15,12 @@ public:
     explicit Geometry(QWidget *parent = 0);
     ~Geometry();
 
+    void updateLabel();
+
+protected:
+    void moveEvent(QMoveEvent *);
+    void resizeEvent(QResizeEvent *);
+
 private:
     Ui::Geometry *ui;
 };
