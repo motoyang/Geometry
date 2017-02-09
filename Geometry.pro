@@ -29,3 +29,7 @@ SOURCES += main.cpp\
 HEADERS  += geometry.h
 
 FORMS    += geometry.ui
+
+CONFIG -= c++11
+QMAKE_CXXFLAGS += -std=c++14
+

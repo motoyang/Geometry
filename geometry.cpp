@@ -16,22 +16,16 @@ Geometry::~Geometry()
 
 void Geometry::updateLabel()
 {
-    QString xStr;
-    ui->xValueLabel->setText(xStr.setNum(x()));
+    ui->xValueLabel->setText(tr("%1").arg(x()));
+    ui->yValueLabel->setText(tr("%1%").arg(y()));
 
-    QString yStr;
-    ui->yValueLabel->setText(yStr.setNum(y()));
+    ui->frmValueLabel->setText(tr("%1, %2, %3, %4").arg(frameGeometry().x())
+                               .arg(frameGeometry().y()).arg(frameGeometry().width())
+                               .arg(frameGeometry().height()));
 
-    QString frameStr;
+    ui->posValueLabel->setText(tr("%1, %2").arg(pos().x()).arg(pos().y()));
+
     QString temp1, temp2, temp3, temp4;
-    frameStr = temp1.setNum(frameGeometry().x()) + ", " + temp2.setNum(frameGeometry().y()) + ", "
-            + temp3.setNum(frameGeometry().width()) + ", " + temp4.setNum(frameGeometry().height());
-    ui->frmValueLabel->setText(frameStr);
-
-    QString posStr;
-    posStr = temp1.setNum(pos().x()) + ", " + temp2.setNum(pos().y());
-    ui->posValueLabel->setText(posStr);
-
     QString geoStr;
     geoStr = temp1.setNum(geometry().x()) + ", " + temp2.setNum(geometry().y()) + ", "
             + temp3.setNum(geometry().width()) + ", " + temp4.setNum(geometry().height());
